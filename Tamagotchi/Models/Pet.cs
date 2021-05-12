@@ -24,6 +24,13 @@ namespace Tamagotchi.Models
     {
       return _allPets;
     }
+
+    public static void ClearAll()
+    {
+      _allPets.Clear();
+    }
+
+    
   }
 }
 

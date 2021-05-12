@@ -6,14 +6,14 @@ using Tamagotchi.Models;
 namespace Tamagotchi.Tests
 {
   [TestClass]
-  public class PetTests// : IDisposable// " : IDisposable" allows for teardown between tests
+  public class PetTests : IDisposable// " : IDisposable" allows for teardown between tests
   {
 
-    // public void Dispose()
-    // {
-    //   // Automatically runs after every test
-    //   Pet.ClearAll();// "ClearAll()" needs to be defined in Pet.cs
-    // }
+    public void Dispose()
+    {
+      // Automatically runs after every test
+      Pet.ClearAll();// "ClearAll()" needs to be defined in Pet.cs
+    }
 
     // Test methods
     [TestMethod]
