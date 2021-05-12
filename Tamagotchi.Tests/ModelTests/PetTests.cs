@@ -1,12 +1,12 @@
 using System;// for IDisposable and Console.WriteLine()
-using System.Collections.Generic;// for List
+using System.Collections.Generic;// for List<>
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tamagotchi.Models;
 
 namespace Tamagotchi.Tests
 {
   [TestClass]
-  public class PetTests : IDisposable// " : IDisposable" allows for teardown between tests
+  public class PetTests : IDisposable// ": IDisposable" allows for teardown between tests
   {
 
     public void Dispose()
@@ -30,7 +30,7 @@ namespace Tamagotchi.Tests
     {
       // Arrange
       List<Pet> newList = new List<Pet> { };
-      
+
       // Act
       List<Pet> result = Pet.GetAll();
       foreach (Pet thisPet in result)
@@ -41,5 +41,20 @@ namespace Tamagotchi.Tests
       // Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetId_PetsInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      //Arrange
+      Pet newPet = new Pet("Hachi", "Udon", 10, 60);
+
+      //Act
+      int result = newPet.Id;
+
+      //Assert
+      Assert.AreEqual(1, result);
+    }
   }
 }
+
+

@@ -17,8 +17,8 @@ namespace Tamagotchi.Models
       Food = food;
       Attention = attention;
       Time = time;
-      _allPets.Add(this);
       Id = _allPets.Count;
+      _allPets.Add(this);
     }
     public static List<Pet> GetAll()
     {
@@ -30,7 +30,10 @@ namespace Tamagotchi.Models
       _allPets.Clear();
     }
 
-    
+    public static Pet Find(int searchId)
+    {
+      return _allPets[searchId - 1];
+    }
   }
 }
 
