@@ -1,0 +1,23 @@
+* {
+  margin: 15px;
+}
+
+h1 {
+  text-align: center;
+}
+
+input,
+label {
+  display: none;
+}
+
+button {
+  opacity: 80%;
+ }
+
+button:hover {
+  opacity: 100%;
+  transform: scale(1.07);
+  transition: 0.2s ease;
+  cursor: pointer;
+}
