@@ -1,11 +1,15 @@
+using System.Collections.Generic;
+
 namespace Tamagotchi.Models
 {
   public class Pet
   {
+    private static List<Pet> _allPets = new List<Pet> { };
     public string Name { get; set; }
     public string Food { get; set; }
     public int Attention { get; set; }
     public int Time { get; set; }
+    public int Id { get; }
 
     public Pet(string name, string food, int attention, int time)
     {
@@ -13,6 +17,12 @@ namespace Tamagotchi.Models
       Food = food;
       Attention = attention;
       Time = time;
+      _allPets.Add(this);
+      Id = _allPets.Count;
+    }
+    public static List<Pet> GetAll()
+    {
+      return _allPets;
     }
   }
 }

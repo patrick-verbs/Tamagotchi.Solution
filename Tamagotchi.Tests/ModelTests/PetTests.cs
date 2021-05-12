@@ -12,7 +12,7 @@ namespace Tamagotchi.Tests
     // public void Dispose()
     // {
     //   // Automatically runs after every test
-    //   Pet.ClearAll();// "ClearAll()" needs to be defined in Item.cs
+    //   Pet.ClearAll();// "ClearAll()" needs to be defined in Pet.cs
     // }
 
     // Test methods
@@ -23,6 +23,23 @@ namespace Tamagotchi.Tests
       Pet newPet = new Pet("Michi", "Ramen", 10, 60);
       // Assert
       Assert.AreEqual(typeof(Pet), newPet.GetType());
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_PetList()
+    {
+      // Arrange
+      List<Pet> newList = new List<Pet> { };
+      
+      // Act
+      List<Pet> result = Pet.GetAll();
+      foreach (Pet thisPet in result)
+      {// NOTE: Console.WriteLine only outputs to the terminal if the test fails
+        Console.WriteLine("Output from empty list GetAll test: " + thisPet.Name);
+      }
+
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
