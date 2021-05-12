@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.StaticFiles;
 
-namespace Template
+namespace TamagotchiGame
 {
   public class Startup
   {
@@ -36,7 +36,7 @@ namespace Template
       app.UseStaticFiles();
       app.Run(async (context) =>
       {
-        await context.Response.WriteAsync("Hello World!");
+        await context.Response.WriteAsync("Something went wrong!");
       });
     }
   }
