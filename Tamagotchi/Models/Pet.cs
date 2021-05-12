@@ -1,19 +1,18 @@
-namespace TamagotchiGame.Models
+namespace Tamagotchi.Models
 {
-  public class Tamagotchi
+  public class Pet
   {
     public string Name { get; set; }
     public string Food { get; set; }
     public int Attention { get; set; }
     public int Time { get; set; }
 
-    public Tamagotchi(string name, string food, int attention, int time)
+    public Pet(string name, string food, int attention, int time)
     {
       Name = name;
       Food = food;
       Attention = attention;
       Time = time;
-
     }
   }
 }
