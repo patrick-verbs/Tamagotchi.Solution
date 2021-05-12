@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using Tamagotchi.Models;
 using System.Collections.Generic;
@@ -14,19 +15,15 @@ namespace Tamagotchi.Controllers
     //   return View(allPets);
     // }
     [HttpPost("/game")]
+    public ActionResult Create(string name, string food, int attention, int time)
     {
-      public ActionResult Index() { return View(); }
-
-      public ActionResult Create(string name, string food, int attention, int time)
-      {
-        Pet TamagotchiInfo = new(
-          name,
-          food,
-          Convert.ToInt32(attention),
-          Convert.ToInt32(time)
-        );
-        return View(TamagotchiInfo);     
-      }
+      Pet TamagotchiInfo = new Pet(
+        name,
+        food,
+        Convert.ToInt32(attention),
+        Convert.ToInt32(time)
+      );
+      return View(TamagotchiInfo);
     }
   }
 }
