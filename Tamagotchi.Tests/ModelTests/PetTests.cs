@@ -54,7 +54,38 @@ namespace Tamagotchi.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectPet_Pet()
+    {
+      //Arrange
+      Pet newPet1 = new Pet("Hachi", "Udon", 10, 60);
+      Pet newPet2 = new Pet("Sachi", "Tempura", 10, 60);
+
+      //Act
+      Pet result = Pet.Find(2);
+
+      //Assert
+      Assert.AreEqual(newPet2, result);
+
+    }
   }
 }
+
+//  [TestMethod]
+//     public void Find_ReturnsCorrectItem_Item()
+//     {
+//       //Arrange
+//       string description01 = "Walk the dog";
+//       string description02 = "Wash the dishes";
+//       Item newItem1 = new Item(description01);
+//       Item newItem2 = new Item(description02);
+
+//       //Act
+//       Item result = Item.Find(2);
+
+//       //Assert
+//       Assert.AreEqual(newItem2, result);
+//     }
 
 

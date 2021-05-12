@@ -17,7 +17,7 @@ namespace Tamagotchi.Models
       Food = food;
       Attention = attention;
       Time = time;
-      Id = _allPets.Count;
+      Id = _allPets.Count + 1;
       _allPets.Add(this);
     }
     public static List<Pet> GetAll()
